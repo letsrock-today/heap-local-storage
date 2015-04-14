@@ -1,0 +1,39 @@
+{
+  "name": "heap-local-storage",
+  "version": "1.0.0",
+  "description": "Cache in HTML5 localStorage based on heap (priority queue)",
+  "main": "lib/cache.js",
+  "scripts": {
+    "test": "mocha --compilers js:babel/register -r test/mock-localstorage.js",
+    "compile": "babel -d lib/ src/",
+    "prepublish": "npm run compile"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/letsrock-today/heap-local-storage.git"
+  },
+  "keywords": [
+    "cache",
+    "localStorage",
+    "heap",
+    "priority",
+    "queue"
+  ],
+  "author": "Nikolay Turpitko",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/letsrock-today/heap-local-storage/issues"
+  },
+  "homepage": "https://github.com/letsrock-today/heap-local-storage",
+  "devDependencies": {
+    "babel": "^5.0.9",
+    "babel-core": "^5.1.8",
+    "chai": "^2.2.0",
+    "mocha": "^2.2.1"
+  },
+  "dependencies": {
+    "core-js": "^0.8.3",
+    "heapjs": "^1.0.3",
+    "lz-string": "^1.4.1"
+  }
+}
