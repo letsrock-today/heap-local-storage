@@ -3,7 +3,7 @@ import {LSArray} from '../src/ls-array';
 
 let should = chai.should();
 
-describe('#LSArray', () => {
+describe('# LSArray', () => {
 
     let arr;
 
@@ -57,9 +57,9 @@ describe('#LSArray', () => {
         arr.push('test');
         chai.expect(function () {
             arr.getAt(42);
-        }).to.throw('Index out of range');
+        }).to.throw(RangeError);
         chai.expect(function () {
             arr.setAt(42, 42);
-        }).to.throw('Index out of range');
+        }).to.throw(RangeError);
     });
 });

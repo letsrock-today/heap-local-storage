@@ -3,7 +3,7 @@ import {IndexedMap} from '../src/indexed-map';
 
 let should = chai.should();
 
-describe('#IndexedMap', () => {
+describe('# IndexedMap', () => {
 
     let map;
 
@@ -68,7 +68,7 @@ describe('#IndexedMap', () => {
         should.not.exist(map.getItem(42));
         chai.expect(function () {
             map.updateItem({ d: 'don\'t panic', k: 777, p: 42 }, (h, i) => {});
-        }).to.throw('Attempt to change unexisting item');
+        }).to.throw(Error, 'Attempt to change unexisting item');
     });
 
     it('less', () => {
@@ -92,7 +92,7 @@ describe('#IndexedMap', () => {
         chai.expect(function () {
             map.push({ d: 'test', k: 'xxx', p: 77 });
             map.push({ d: 'test', k: 'xxx', p: 77 });
-        }).to.throw('Attempt to push duplicate item');
+        }).to.throw(Error, 'Attempt to push duplicate item');
     });
 
     it('remove', (done) => {

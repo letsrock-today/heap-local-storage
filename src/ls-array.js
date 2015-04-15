@@ -13,7 +13,7 @@ export class LSArray {
     getAt(i) {
         let t = this;
         if (i < 0 || i >= t.len()) {
-            throw 'Index out of range';
+            throw new RangeError('Index ' + i + ' out of range');
         }
         return _storage.getItem(key(t, i));
     }
@@ -21,7 +21,7 @@ export class LSArray {
     setAt(i, x) {
         let t = this;
         if (i < 0 || i >= t.len()) {
-            throw 'Index out of range';
+            throw new RangeError('Index ' + i + ' out of range');
         }
         return _storage.setItem(key(t, i), x);
     }

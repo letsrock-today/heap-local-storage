@@ -38,7 +38,7 @@ to compress keys and values to better use limited space of localStorage.
 
 ## Installation
 
-    npm i -g heap-local-storage
+    npm install heap-local-storage --save
 
 ## Usage
 

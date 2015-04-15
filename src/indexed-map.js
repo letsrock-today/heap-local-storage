@@ -32,7 +32,7 @@ export class IndexedMap {
         }
         let iv = JSON.parse(t.indexArray.getAt(mv.i));
         if (iv.k != key) {
-            throw 'Illegal state';
+            throw new Error('Illegal state');
         }
         return { d: mv.d, k: iv.k, p: iv.p };
     }
@@ -47,7 +47,7 @@ export class IndexedMap {
         }
         let iv = JSON.parse(t.indexArray.getAt(mv.i));
         if (iv.k != key) {
-            throw 'Illegal state';
+            throw new Error('Illegal state');
         }
 	removeCallback(t, mv.i);
     }
@@ -60,12 +60,12 @@ export class IndexedMap {
 	    k = dataKey(t, x.k),
             mv = JSON.parse(_storage.getItem(k));
         if (mv === null) {
-            throw 'Attempt to change unexisting item';
+            throw new Error('Attempt to change unexisting item');
         }
         let indexArray = t.indexArray,
             iv = JSON.parse(indexArray.getAt(mv.i));
         if (iv.k != x.k) {
-            throw 'Illegal state';
+            throw new Error('Illegal state');
         }
         mv.d = x.d;
         iv.p = x.p;
@@ -81,7 +81,7 @@ export class IndexedMap {
             l = t.indexArray.len(),
             iv = { k: x.k, p: x.p };
 	if (mv !== null) {
-	    throw 'Attempt to push duplicate item';
+	    throw new Error('Attempt to push duplicate item');
 	}
         mv = { i: l, d: x.d };
         _storage.setItem(k, JSON.stringify(mv));

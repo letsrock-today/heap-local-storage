@@ -3,7 +3,7 @@ import {Cache} from '../src/cache';
 
 let should = chai.should();
 
-describe('#Cache', () => {
+describe('# Cache', () => {
 
     let c;
 
@@ -117,7 +117,7 @@ describe('#Cache', () => {
         chai.expect(function () {
             c.addItem(42, 42, 100);
             c.addItem(42, 42, 100);
-        }).to.throw('Attempt to push duplicate item');
+        }).to.throw(Error, 'Attempt to push duplicate item');
     });
 
     it('performance (long test, see console)', function(done) {
