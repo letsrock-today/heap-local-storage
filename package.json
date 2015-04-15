@@ -1,6 +1,6 @@
 {
   "name": "heap-local-storage",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Cache in HTML5 localStorage based on heap (priority queue)",
   "main": "lib/cache.js",
   "scripts": {
